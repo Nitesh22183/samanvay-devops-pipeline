@@ -69,7 +69,7 @@ pipeline {
                     docker rm -f $CONTAINER_NAME || true
                     docker run -d \
                         --name $CONTAINER_NAME \
-                        -p $APP_PORT:5005 \
+                        -p $APP_PORT:5000 \
                         $DOCKERHUB_USERNAME/$IMAGE_NAME:$IMAGE_TAG
                     docker ps | grep $CONTAINER_NAME
                 '''
