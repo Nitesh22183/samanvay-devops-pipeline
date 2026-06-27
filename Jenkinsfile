@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME         = "samanvay-app"
         IMAGE_TAG          = "${BUILD_NUMBER}"
         CONTAINER_NAME     = "samanvay-container"
-        APP_PORT           = "5000"
+        APP_PORT           = "5005"
     }
 
     stages {
@@ -69,7 +69,7 @@ pipeline {
                     docker rm -f $CONTAINER_NAME || true
                     docker run -d \
                         --name $CONTAINER_NAME \
-                        -p $APP_PORT:5000 \
+                        -p $APP_PORT:5005 \
                         $DOCKERHUB_USERNAME/$IMAGE_NAME:$IMAGE_TAG
                     docker ps | grep $CONTAINER_NAME
                 '''
