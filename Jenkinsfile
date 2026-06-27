@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME         = "samanvay-app"
         IMAGE_TAG          = "${BUILD_NUMBER}"
         CONTAINER_NAME     = "samanvay-container"
-        APP_PORT           = "5005"
+        APP_PORT           = "5000"
     }
 
     stages {
